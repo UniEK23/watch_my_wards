@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/remixicon@4.9.1/fonts/remixicon.css">
+        <link rel="stylesheet" href="student_manager.css">
+        <title>Watch My Wards</title>
+    </head>
+
+    <body>
+        <!-- DESKTOP NAV -->
+        <div class="sidebar">
+
+            <div class="sidebar-brand">
+
+                <div class="brand-icon">
+                    <i class="ri-graduation-cap-fill"></i>
+                </div>
+
+                <div>
+                    <h2>Student Records</h2>
+                    <p>Dashboard</p>
+                </div>
+
+            </div>
+
+
+            <nav class="sidebar-nav">
+
+                <a href="#" class="sidebar-item active">
+                    <i class="ri-home-5-line"></i>
+                    <span>Dashboard</span>
+                </a>
+
+                <a href="#" class="sidebar-item">
+                    <i class="ri-group-line"></i>
+                    <span>Students</span>
+                </a>
+
+                <a href="#" class="sidebar-item">
+                    <i class="ri-user-add-line"></i>
+                    <span>Add Student</span>
+                </a>
+
+                <a href="#" class="sidebar-item">
+                    <i class="ri-bar-chart-2-line"></i>
+                    <span>Reports</span>
+                </a>
+
+                <a href="#" class="sidebar-item">
+                    <i class="ri-book-open-line"></i>
+                    <span>Courses</span>
+                </a>
+
+                <a href="#" class="sidebar-item">
+                    <i class="ri-settings-4-line"></i>
+                    <span>Settings</span>
+                </a>
+
+            </nav>
+
+
+            <div class="sidebar-user">
+
+                <div class="user-avatar">
+                    <i class="ri-user-fill"></i>
+                </div>
+
+                <div>
+                    <strong>Admin</strong>
+                    <small>Student Manager</small>
+                </div>
+
+            </div>
+
+        </div>
+        
+
+        <!-- MOBILE NAV -->
+
+        <!-- TOP HEADER -->
+        <header class="topbar">
+            <div class="brand">
+                <div class="brand-icon">
+                    <a href="#" class="webicon">
+                        <i class="ri-graduation-cap-fill"></i>
+                    </a>
+                </div>
+
+                <div>
+                    <h1>Student Records</h1>
+                    <p>Management System</p>
+                </div>
+            </div>
+
+            <button class="notification-btn" aria-label="Notifications">
+                <i class="ri-notification-4-line"></i>
+            </button>
+        </header>
+
+
+        <!-- MAIN SECTION -->
+        <main class="main-content">
+            <!-- WELCOME PAGE -->
+            <section class="welcome">
+                <p class="eyebrow">DASHBOARD</p>
+                <h2>Student Overview</h2>
+                <p>Manage and view your student records.</p>
+            </section>
+
+            <!-- STATISTICS -->
+            <section class="stats-grid">
+                <article class="stat-card">
+                    <div class="stat-icon blue">
+                        <i class="ri-group-line"></i>
+                    </div>
+
+                    <div>
+                        <span>Total Students</span>
+                        <strong id="totalStudents">0</strong>
+                    </div>
+                </article>
+
+                <article class="stat-card">
+                    <div class="stat-icon green">
+                        <i class="ri-book-open-line"></i>
+                    </div>
+
+                    <div>
+                        <span>Total Courses</span>
+                        <strong id="totalCourses">0</strong>
+                    </div>
+                </article>
+
+                <article class="stat-card">
+                    <div class="stat-icon purple">
+                        <i class="ri-line-chart-line"></i>
+                    </div>
+
+                    <div>
+                        <span>Average Age</span>
+                        <strong id="averageAge">0</strong>
+                    </div>
+                </article>
+            </section>
+
+
+            <!-- SEARCH SECTION -->
+            <section class="student-section">
+                <div class="section-header">
+                    <div>
+                        <p class="eyebrow">RECORDS</p>
+                        <h2>Students</h2>
+                    </div>
+                </div>
+
+                <div class="search-container">
+                    <span class="search-icon">
+                        <i class="ri-search-2-line"></i>
+                    </span>
+
+                    <input type="search" name="search" id="searchInput" placeholder="Search students..." autocomplete="off">
+                </div>
+
+                <!-- STUDENT LIST -->
+                <div id="studentList" class="student-list">
+                    <!-- JS Generates Students Here -->
+
+                    <div class="empty-state">
+                        <div>
+                            <i class="ri-user-6-fill"></i>
+                        </div>
+                        <h3>No students yet</h3>
+                        <p>Student records will appear here.</p>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <!-- ADD STUDENT BUTTON -->
+        <button class="add-student-btn" id="addStudentBtn" aria-label="Add Student">
+            <span>+</span>
+        </button>
+
+        <!-- BOTTOM NAVIGATION -->
+        <nav class="bottom-nav">
+            <a href="#" class="nav-item active">
+                <span>
+                    <i class="ri-home-5-line"></i>
+                </span>
+                <small>Dashboard</small>
+            </a>
+
+            <a href="#" class="nav-item">
+                <span>
+                    <i class="ri-group-line"></i>
+                </span>
+                <small>Students</small>
+            </a>
+
+            <a href="#" class="nav-item">
+                <span>
+                    <i class="ri-line-chart-line"></i>
+                </span>
+                <small>Reports</small>
+            </a>
+
+            <a href="#" class="nav-item">
+                <span>
+                    <i class="ri-settings-4-line"></i>
+                </span>
+                <small>Settings</small>
+            </a>
+        </nav>
+
+        <script src="student_manager.js"></script>
+    </body>
+</html>
