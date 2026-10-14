@@ -655,3 +655,529 @@ body {
         bottom: 32px;
     }
 }
+
+
+/* =========================================
+   STUDENT TOOLBAR
+========================================= */
+
+.student-toolbar {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 12px;
+    margin-bottom: 18px;
+}
+
+.course-filter {
+    width: 100%;
+    min-width: 0;
+    padding: 13px 14px;
+
+    color: var(--text);
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+
+    font: inherit;
+    font-size: 14px;
+    outline: none;
+}
+
+.course-filter:focus {
+    border-color: var(--primary);
+}
+
+/* =========================================
+   RESPONSIVE STUDENT RECORDS
+========================================= */
+
+.student-table-head {
+    display: none;
+}
+
+.student-card {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) auto;
+    grid-template-rows: auto auto;
+
+    align-items: center;
+    gap: 6px 12px;
+
+    min-width: 0;
+}
+
+.student-id {
+    display: none;
+}
+
+.student-info {
+    grid-column: 1;
+    grid-row: 1;
+    min-width: 0;
+}
+
+.student-info h3 {
+    overflow-wrap: anywhere;
+}
+
+.student-course {
+    grid-column: 1;
+    grid-row: 2;
+
+    color: var(--muted);
+    font-size: 12px;
+    overflow-wrap: anywhere;
+}
+
+.student-age {
+    grid-column: 2;
+    grid-row: 1;
+}
+
+.student-actions {
+    grid-column: 2;
+    grid-row: 2;
+
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.action-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+
+    min-width: 34px;
+    min-height: 34px;
+    padding: 7px;
+
+    border: 1px solid var(--border);
+    border-radius: 8px;
+
+    background: var(--surface-light);
+    color: var(--text);
+
+    font: inherit;
+    font-size: 12px;
+    cursor: pointer;
+
+    transition:
+        background 0.2s ease,
+        border-color 0.2s ease;
+}
+
+.action-btn i {
+    font-size: 16px;
+}
+
+.edit-btn:hover {
+    border-color: var(--primary-light);
+    background: #172554;
+}
+
+.delete-btn {
+    color: #fca5a5;
+}
+
+.delete-btn:hover {
+    border-color: var(--danger);
+    background: #451a1a;
+}
+
+.action-btn:disabled {
+    opacity: 0.55;
+    cursor: not-allowed;
+}
+
+.action-label {
+    display: none;
+}
+
+.retry-btn {
+    margin-top: 16px;
+    padding: 10px 16px;
+
+    color: white;
+    background: var(--primary);
+    border: 0;
+    border-radius: 9px;
+
+    font: inherit;
+    cursor: pointer;
+}
+
+/* =========================================
+   ADD / EDIT MODAL
+========================================= */
+
+.student-modal {
+    position: fixed;
+    inset: auto 0 0;
+
+    width: 100%;
+    max-width: none;
+    max-height: 90vh;
+    overflow-y: auto;
+
+    margin: 0;
+    padding: 24px 20px 28px;
+
+    color: var(--text);
+    background: var(--surface);
+
+    border: 1px solid var(--border);
+    border-bottom: 0;
+    border-radius: 20px 20px 0 0;
+
+    box-shadow: 0 -12px 50px rgba(0, 0, 0, 0.35);
+}
+
+.student-modal::backdrop {
+    background: rgba(0, 0, 0, 0.7);
+    backdrop-filter: blur(3px);
+}
+
+.student-modal[open] {
+    animation: modal-slide-up 0.22s ease-out;
+}
+
+@keyframes modal-slide-up {
+    from {
+        opacity: 0;
+        translate: 0 18px;
+    }
+
+    to {
+        opacity: 1;
+        translate: 0 0;
+    }
+}
+
+.modal-header {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 16px;
+
+    margin-bottom: 25px;
+}
+
+.modal-header h2 {
+    margin-bottom: 7px;
+    font-size: 23px;
+}
+
+.modal-description {
+    color: var(--muted);
+    font-size: 13px;
+    line-height: 1.5;
+}
+
+.modal-close {
+    display: grid;
+    place-items: center;
+
+    width: 38px;
+    height: 38px;
+    flex-shrink: 0;
+
+    color: var(--muted);
+    background: var(--surface-light);
+
+    border: 1px solid var(--border);
+    border-radius: 10px;
+
+    font-size: 20px;
+    cursor: pointer;
+}
+
+.form-field {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+
+    margin-bottom: 18px;
+}
+
+.form-field label {
+    font-size: 13px;
+    font-weight: 600;
+}
+
+.form-field input {
+    width: 100%;
+    min-height: 46px;
+    padding: 12px 14px;
+
+    color: var(--text);
+    background: var(--bg);
+
+    border: 1px solid var(--border);
+    border-radius: 10px;
+
+    font: inherit;
+    font-size: 14px;
+    outline: none;
+}
+
+.form-field input:focus {
+    border-color: var(--primary-light);
+    box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.12);
+}
+
+.modal-actions {
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+
+    margin-top: 26px;
+}
+
+.cancel-btn,
+.save-btn {
+    min-height: 44px;
+    padding: 11px 16px;
+
+    border-radius: 10px;
+    border: 1px solid transparent;
+
+    font: inherit;
+    font-size: 13px;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.cancel-btn {
+    color: var(--text);
+    background: var(--surface-light);
+    border-color: var(--border);
+}
+
+.save-btn {
+    color: white;
+    background: var(--primary);
+}
+
+.save-btn:hover {
+    background: var(--primary-light);
+}
+
+.save-btn:disabled {
+    opacity: 0.6;
+    cursor: wait;
+}
+
+/* =========================================
+   TOAST NOTIFICATIONS
+========================================= */
+
+.toast {
+    position: fixed;
+    z-index: 100;
+
+    left: 16px;
+    right: 16px;
+    bottom: 88px;
+
+    width: fit-content;
+    max-width: calc(100% - 32px);
+    margin-inline: auto;
+    padding: 13px 18px;
+
+    color: var(--text);
+    background: var(--surface-light);
+
+    border: 1px solid var(--border);
+    border-radius: 12px;
+
+    font-size: 13px;
+    line-height: 1.5;
+
+    opacity: 0;
+    visibility: hidden;
+    translate: 0 10px;
+
+    transition:
+        opacity 0.2s ease,
+        translate 0.2s ease,
+        visibility 0.2s ease;
+}
+
+.toast.show {
+    opacity: 1;
+    visibility: visible;
+    translate: 0 0;
+}
+
+.toast.success {
+    border-color: #166534;
+}
+
+.toast.error {
+    border-color: #991b1b;
+}
+
+/* =========================================
+   TABLET
+========================================= */
+
+@media (min-width: 768px) {
+
+    .student-toolbar {
+        grid-template-columns: minmax(0, 1fr) 220px;
+        align-items: center;
+    }
+
+    .student-toolbar .search-container {
+        margin-bottom: 0;
+        max-width: none;
+    }
+
+    .toast {
+        bottom: 94px;
+    }
+}
+
+/* =========================================
+   DESKTOP
+   Keep this breakpoint consistent with your
+   existing desktop media query.
+========================================= */
+
+@media (min-width: 1100px) {
+
+    .student-toolbar {
+        grid-template-columns: minmax(0, 1fr) 220px;
+    }
+
+    .student-table-head {
+        display: grid;
+        grid-template-columns:
+            60px
+            minmax(160px, 1.1fr)
+            minmax(180px, 1.5fr)
+            70px
+            150px;
+
+        gap: 16px;
+        align-items: center;
+
+        padding: 14px 12px;
+
+        color: var(--muted);
+        border-bottom: 1px solid var(--border);
+
+        font-size: 11px;
+        font-weight: 700;
+        letter-spacing: 0.7px;
+        text-transform: uppercase;
+    }
+
+    .student-list {
+        display: flex;
+        flex-direction: column;
+        gap: 0;
+    }
+
+    .student-card {
+        display: grid;
+        grid-template-columns:
+            60px
+            minmax(160px, 1.1fr)
+            minmax(180px, 1.5fr)
+            70px
+            150px;
+
+        gap: 16px;
+        align-items: center;
+
+        padding: 17px 12px;
+
+        background: transparent;
+        border: 0;
+        border-bottom: 1px solid var(--border);
+        border-radius: 0;
+    }
+
+    .student-card:last-child {
+        border-bottom: 0;
+    }
+
+    .student-id {
+        display: block;
+        color: var(--muted);
+        font-size: 12px;
+    }
+
+    .student-info {
+        grid-column: 2;
+        grid-row: 1;
+    }
+
+    .student-info h3 {
+        font-size: 13px;
+    }
+
+    .student-course {
+        grid-column: 3;
+        grid-row: 1;
+
+        font-size: 13px;
+    }
+
+    .student-age {
+        grid-column: 4;
+        grid-row: 1;
+
+        text-align: center;
+    }
+
+    .student-actions {
+        grid-column: 5;
+        grid-row: 1;
+
+        justify-self: start;
+    }
+
+    .action-label {
+        display: inline;
+    }
+
+    .toast {
+        bottom: 24px;
+    }
+
+    .student-modal {
+        position: fixed;
+        inset: 50% auto auto 50%;
+        transform: translate(-50%, -50%);
+
+        width: min(520px, calc(100% - 40px));
+        max-width: 520px;
+        max-height: min(85vh, 760px);
+
+        margin: 0;
+        padding: 28px;
+
+        border: 1px solid var(--border);
+        border-radius: 18px;
+
+        box-shadow: 0 25px 80px rgba(0, 0, 0, 0.45);
+    }
+
+    .student-modal[open] {
+        animation: modal-fade-in 0.18s ease-out;
+    }
+
+    @keyframes modal-fade-in {
+        from {
+            opacity: 0;
+        }
+
+        to {
+            opacity: 1;
+        }
+    }
+}
